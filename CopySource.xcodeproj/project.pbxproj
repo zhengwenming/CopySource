@@ -771,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WR5828Y35T;
 				GCC_PREFIX_HEADER = CopySource/CopySource.pch;
 				INFOPLIST_FILE = CopySource/Info.plist;
@@ -785,6 +786,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WR5828Y35T;
 				GCC_PREFIX_HEADER = CopySource/CopySource.pch;
 				INFOPLIST_FILE = CopySource/Info.plist;
