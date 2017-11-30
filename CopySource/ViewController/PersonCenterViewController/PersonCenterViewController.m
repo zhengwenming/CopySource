@@ -22,7 +22,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor greenColor] isHiddenBottomBlackLine:NO];
+    [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor greenColor]];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];

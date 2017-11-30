@@ -36,7 +36,7 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
-    [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor redColor] isHiddenBottomBlackLine:NO];
+    [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor redColor]];
     [super viewWillAppear:animated];
     _itemsArray = @[@[@"意见反馈",@"关于我们",@"版本信息",@"清除缓存"],@[@"修改密码"],@[@"退出登录"]].mutableCopy;
     [self layoutTableView];

@@ -17,8 +17,7 @@ static char lineKey;
 
 - (UIView *)overlay
 {
-    UIView *overlayView = objc_getAssociatedObject(self, &overlayKey);
-    return overlayView;
+    return objc_getAssociatedObject(self, &overlayKey);
 }
 
 - (void)setOverlay:(UIView *)overlay
@@ -46,26 +45,25 @@ static char lineKey;
     if (self.overlay) {
         return self.overlay.backgroundColor;
     }
-    return self.barTintColor;
+    return nil;
 }
-- (void)wm_setBackgroundColor:(UIColor *)backgroundColor isHiddenBottomBlackLine:(BOOL)isHiddenBottomBlackLine
+- (void)wm_setBackgroundColor:(UIColor *)backgroundColor
 {
     if (!self.overlay) {
-        self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20)];
-        NSLog(@"alloc overLay");
+        [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kNavbarHeight)];
         self.overlay.userInteractionEnabled = NO;
-        self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        
-        [[self.subviews firstObject] insertSubview:self.overlay atIndex:0];
-        [[self.subviews firstObject] bringSubviewToFront:self.overlay];
+        self.overlay.layer.zPosition = 999;
+        [self.subviews.firstObject addSubview:self.overlay];
     }
-        if (isHiddenBottomBlackLine==NO) {
-            
-        }else{
-            //去除底部黑线
-            [self setShadowImage:[UIImage new]];
-        }
-    [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    if (backgroundColor==[UIColor clearColor]) {
+        //判断如果是设置clearColor，说明想让导航栏透明，那么直接去除底部黑线
+        [self setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [self setShadowImage:[[UIImage alloc] init]];
+    }else{
+        [self setShadowImage:nil];
+//        [self wm_reset];
+    }
     self.overlay.backgroundColor = backgroundColor;
 }
 
@@ -77,7 +75,7 @@ static char lineKey;
 - (void)wm_setContentAlpha:(CGFloat)alpha
 {
     if (!self.overlay) {
-        [self wm_setBackgroundColor:self.barTintColor isHiddenBottomBlackLine:NO];
+        [self wm_setBackgroundColor:self.barTintColor];
     }
     [self setAlpha:alpha forSubviewsOfView:self];
     if (alpha == 1) {
@@ -101,13 +99,10 @@ static char lineKey;
 
 - (void)wm_reset
 {
-        [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-        [self setShadowImage:nil];
-    if (self.overlay) {
-        [self.overlay removeFromSuperview];
-        self.overlay = nil;
-        NSLog(@"release overLay");
-    }
+    [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self setShadowImage:nil];
+    [self.overlay removeFromSuperview];
+    self.overlay = nil;
 }
 
 @end

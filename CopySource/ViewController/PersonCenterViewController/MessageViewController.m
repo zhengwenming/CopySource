@@ -11,7 +11,7 @@
 @interface MessageViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSString *applicantId;
 }
-@property (weak, nonatomic) IBOutlet UITableView *messageTableView;
+@property (strong, nonatomic) UITableView *messageTableView;
 @property(nonatomic,strong)NSMutableArray *dataSource;
 @end
 
@@ -30,16 +30,26 @@
     }
     return  _dataSource;
 }
-
+-(UITableView *)messageTableView{
+    if (_messageTableView==nil) {
+        _messageTableView  = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight-kNavbarHeight) style:UITableViewStyleGrouped];
+        _messageTableView.delegate = self;
+        _messageTableView.dataSource = self;
+        _messageTableView.tableFooterView = [UIView new];
+        [_messageTableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:@"UITableViewCell"];
+        _messageTableView.rowHeight = 50.f;
+    }
+    return _messageTableView;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.messageTableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:@"UITableViewCell"];
-    self.messageTableView.rowHeight = 50;
-
+    
     self.navigationItem.title = @"试试旋转屏幕";
     for (NSUInteger index = 0; index<20; index++) {
         [self.dataSource addObject:[NSString stringWithFormat:@"左滑删除%@",@(index)]];
     }
+    [self.view addSubview:self.messageTableView];
 
 }
 
@@ -76,6 +86,20 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    
     
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, CGFLOAT_MIN)];
+    return aView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return CGFLOAT_MIN;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, CGFLOAT_MIN)];
+    return aView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return CGFLOAT_MIN;
 }
 //- (BOOL)shouldAutorotate{
 //    //是否允许转屏

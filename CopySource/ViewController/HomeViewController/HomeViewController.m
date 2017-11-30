@@ -28,9 +28,9 @@
     [self.navigationController.navigationBar wm_reset];
 
     if (self.navColor) {
-        [self.navigationController.navigationBar wm_setBackgroundColor:self.navColor isHiddenBottomBlackLine:YES];
+        [self.navigationController.navigationBar wm_setBackgroundColor:self.navColor];
     }else{
-        [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor clearColor] isHiddenBottomBlackLine:YES];
+        [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor clearColor]];
     }
     
 }
@@ -64,7 +64,7 @@
 
 -(UITableView *)table{
     if (_table==nil) {
-        _table  = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
+        _table  = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight) style:UITableViewStyleGrouped];
         _table.delegate = self;
         _table.dataSource = self;
         _table.tableFooterView = [UIView new];
@@ -83,7 +83,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    dataSource = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
+    dataSource = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16"];
     self.navigationItem.title = @"推荐";
     [self.view addSubview:self.table];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ewm"] style:UIBarButtonItemStylePlain target:self action:@selector(scanEwm:)];
@@ -118,13 +118,13 @@
             CGFloat alpha = (offsetY -64) / 64 ;
             alpha = MIN(alpha, 0.99);
             //            NSLog(@"alpha =%f",alpha);
-            [self.navigationController.navigationBar wm_setBackgroundColor:[kTintColor colorWithAlphaComponent:alpha] isHiddenBottomBlackLine:YES];
+            [self.navigationController.navigationBar wm_setBackgroundColor:[kTintColor colorWithAlphaComponent:alpha]];
             if (alpha>=0.99) {
                 [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
                 self.navigationItem.title = @"推荐";
             }
         } else {
-            [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor clearColor] isHiddenBottomBlackLine:YES];
+            [self.navigationController.navigationBar wm_setBackgroundColor:[UIColor clearColor]];
             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
             self.navigationItem.title = @"";
         }
@@ -134,6 +134,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SetViewController *setVC = [SetViewController new];
     [self.navigationController pushViewController:setVC animated:YES];
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *aView = [UIView new];
+    aView.frame = CGRectMake(0, 0, tableView.frame.size.width, 0.0001);
+    return aView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.00001;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

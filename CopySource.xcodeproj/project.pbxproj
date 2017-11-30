@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7018469D1F47EF850063767A /* UIViewController+PopBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018469C1F47EF850063767A /* UIViewController+PopBlock.m */; };
 		701846A11F47F4E30063767A /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018469F1F47F4E30063767A /* MessageViewController.m */; };
-		701846A21F47F4E30063767A /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701846A01F47F4E30063767A /* MessageViewController.xib */; };
 		701846A51F4808260063767A /* PopBlockTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701846A41F4808260063767A /* PopBlockTestViewController.m */; };
 		709AB4EA1E9A184600A26E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709AB4E91E9A184600A26E20 /* main.m */; };
 		709AB4ED1E9A184600A26E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 709AB4EC1E9A184600A26E20 /* AppDelegate.m */; };
@@ -78,7 +77,6 @@
 		7018469C1F47EF850063767A /* UIViewController+PopBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PopBlock.m"; sourceTree = "<group>"; };
 		7018469E1F47F4E30063767A /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		7018469F1F47F4E30063767A /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		701846A01F47F4E30063767A /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		701846A31F4808260063767A /* PopBlockTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopBlockTestViewController.h; sourceTree = "<group>"; };
 		701846A41F4808260063767A /* PopBlockTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopBlockTestViewController.m; sourceTree = "<group>"; };
 		709AB4E51E9A184600A26E20 /* CopySource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopySource.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,7 +285,6 @@
 				709AB5891E9A5BFB00A26E20 /* SetViewController.m */,
 				7018469E1F47F4E30063767A /* MessageViewController.h */,
 				7018469F1F47F4E30063767A /* MessageViewController.m */,
-				701846A01F47F4E30063767A /* MessageViewController.xib */,
 				701846A31F4808260063767A /* PopBlockTestViewController.h */,
 				701846A41F4808260063767A /* PopBlockTestViewController.m */,
 			);
@@ -590,7 +587,6 @@
 				709AB59C1E9A787500A26E20 /* LoginViewController.xib in Resources */,
 				709AB5801E9A598400A26E20 /* guidePage2-568h@2x.png in Resources */,
 				709AB5011E9A51CF00A26E20 /* MainUI.plist in Resources */,
-				701846A21F47F4E30063767A /* MessageViewController.xib in Resources */,
 				709AB5831E9A598400A26E20 /* guidePage2@2x.png in Resources */,
 				709AB54B1E9A561300A26E20 /* MBProgressHUD.bundle in Resources */,
 				709AB57D1E9A598400A26E20 /* guidePage2@3x.png in Resources */,

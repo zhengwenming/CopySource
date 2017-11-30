@@ -24,18 +24,21 @@
 
 
 ///适配相关
-#define kTopScrollerViewHight 44
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#define kAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 #define kDeviceVersion [[UIDevice currentDevice].systemVersion floatValue]
-#define kNavbarHeight ((kDeviceVersion>=7.0)? 64 :44 )
-#define kIOS7DELTA   ((kDeviceVersion>=7.0)? 20 :0 )
-#define kTabBarHeight 49
-// navigation fontSize
-#define kPolicyDetailHeaderViewHeight 77.f
-#define kReimbursedByThirdPartyButtonTag 500
-#define kIphone5TextFont 13.f
+
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+
+#define kSystemNavHeight 44.0
+
+#define kNavbarHeight (kStatusBarHeight+kSystemNavHeight)
+
+#define kTabBarHeight (iPhoneX?(49.f+34.f):(49.f))
 
 
 #define TheUserDefaults [NSUserDefaults standardUserDefaults]
@@ -51,6 +54,7 @@
 #define IS_IPHONE5 (IS_IPHONE && kSCREEN_MAX_LENGTH == 568.0)
 #define IS_IPHONE6 (IS_IPHONE && kSCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE6P (IS_IPHONE && kSCREEN_MAX_LENGTH == 736.0)
+#define iPhoneX (kScreenWidth == 375.0f) && (kScreenHeight == 812.0f) && IS_IPHONE
 
 
 

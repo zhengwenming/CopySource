@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationBar (alpha)
-- (void)wm_setBackgroundColor:(UIColor *)backgroundColor isHiddenBottomBlackLine:(BOOL)isHiddenBottomBlackLine;
-///获取UINavigationBar的颜色
+- (void)wm_setBackgroundColor:(UIColor *)backgroundColor;
 - (UIColor *)wm_getBackgroundColor;
-
 - (void)wm_setContentAlpha:(CGFloat)alpha;
 - (void)wm_setTranslationY:(CGFloat)translationY;
 - (void)wm_reset;

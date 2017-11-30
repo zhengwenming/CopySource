@@ -21,9 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    if([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
-    {
-        self.automaticallyAdjustsScrollViewInsets=NO;
+  
+    if (@available(ios 11.0,*)) {
+            UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            UITableView.appearance.estimatedRowHeight = 0;
+            UITableView.appearance.estimatedSectionFooterHeight = 0;
+            UITableView.appearance.estimatedSectionHeaderHeight = 0;
+    }else{
+        if([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
+        {
+            self.automaticallyAdjustsScrollViewInsets=NO;
+        }
     }
 }
 
