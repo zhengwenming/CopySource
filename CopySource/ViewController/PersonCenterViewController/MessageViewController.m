@@ -38,6 +38,7 @@
         _messageTableView.tableFooterView = [UIView new];
         [_messageTableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:@"UITableViewCell"];
         _messageTableView.rowHeight = 50.f;
+        _messageTableView.contentInset = UIEdgeInsetsMake(0, 0, 34.f, 0);
     }
     return _messageTableView;
     
