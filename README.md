@@ -38,6 +38,17 @@ iOS项目框架问题（baseVC，baseNav、全屏返回手势、旋转屏幕、�
     
     
     //8.3 添加和修改了一些适配iOS 11的宏
+    
+    
+    //8.4 修正push过程中tabbar上移问题
+    if (@available(iOS 11.0, *)){
+        // 修改tabBra的frame
+        CGRect frame = self.tabBarController.tabBar.frame;
+        frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+        self.tabBarController.tabBar.frame = frame;
+    }
+    
+    
     
  
 
