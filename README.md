@@ -48,8 +48,9 @@ iOS项目框架问题（baseVC，baseNav、全屏返回手势、旋转屏幕、�
         frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
         self.tabBarController.tabBar.frame = frame;
     }
-    
-    
+
+//9、UIScrollView和UITableView的联动效果
+    
     
  
 
