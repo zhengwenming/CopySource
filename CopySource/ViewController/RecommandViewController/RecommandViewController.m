@@ -9,6 +9,7 @@
 
 #import "RecommandViewController.h"
 #import "SetViewController.h"
+#import "SVandTVViewController.h"
 
 @interface RecommandViewController ()
 
@@ -33,6 +34,23 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(testNav:)];
     [testLabel addGestureRecognizer:tap];
+    
+    
+    
+    
+    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(testLabel.frame.origin.x, CGRectGetMaxY(testLabel.frame)+10, testLabel.frame.size.width, 100)];
+    aLabel.text = @"点击我查看-->\n（UIScrollView和UITableView的联动效果）";
+    aLabel.backgroundColor = [UIColor orangeColor];
+    aLabel.numberOfLines = 0;
+    aLabel.userInteractionEnabled = YES;
+    [self.view addSubview:aLabel];
+    
+    UITapGestureRecognizer *atap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(seeScrollView:)];
+    [aLabel addGestureRecognizer:atap];
+}
+-(void)seeScrollView:(UITapGestureRecognizer *)sender{
+    SVandTVViewController *setVC = [SVandTVViewController new];
+    [self.navigationController pushViewController:setVC animated:YES];
 }
 -(void)testNav:(UITapGestureRecognizer *)sender{
     SetViewController *setVC = [SetViewController new];

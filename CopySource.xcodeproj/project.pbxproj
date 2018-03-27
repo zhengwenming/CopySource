@@ -10,6 +10,10 @@
 		7018469D1F47EF850063767A /* UIViewController+PopBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018469C1F47EF850063767A /* UIViewController+PopBlock.m */; };
 		701846A11F47F4E30063767A /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018469F1F47F4E30063767A /* MessageViewController.m */; };
 		701846A51F4808260063767A /* PopBlockTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701846A41F4808260063767A /* PopBlockTestViewController.m */; };
+		702A512F204E90450040CE3F /* SVandTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 702A512E204E90450040CE3F /* SVandTVViewController.m */; };
+		702A5133204E97050040CE3F /* AutoRowHightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 702A5131204E97050040CE3F /* AutoRowHightCell.m */; };
+		702A5134204E97050040CE3F /* AutoRowHightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 702A5132204E97050040CE3F /* AutoRowHightCell.xib */; };
+		702A5138204EA4EF0040CE3F /* TitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 702A5137204EA4EF0040CE3F /* TitleScrollView.m */; };
 		709AB4EA1E9A184600A26E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709AB4E91E9A184600A26E20 /* main.m */; };
 		709AB4ED1E9A184600A26E20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 709AB4EC1E9A184600A26E20 /* AppDelegate.m */; };
 		709AB4F31E9A184600A26E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 709AB4F11E9A184600A26E20 /* Main.storyboard */; };
@@ -79,6 +83,13 @@
 		7018469F1F47F4E30063767A /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		701846A31F4808260063767A /* PopBlockTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopBlockTestViewController.h; sourceTree = "<group>"; };
 		701846A41F4808260063767A /* PopBlockTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopBlockTestViewController.m; sourceTree = "<group>"; };
+		702A512D204E90450040CE3F /* SVandTVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVandTVViewController.h; sourceTree = "<group>"; };
+		702A512E204E90450040CE3F /* SVandTVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVandTVViewController.m; sourceTree = "<group>"; };
+		702A5130204E97050040CE3F /* AutoRowHightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRowHightCell.h; sourceTree = "<group>"; };
+		702A5131204E97050040CE3F /* AutoRowHightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoRowHightCell.m; sourceTree = "<group>"; };
+		702A5132204E97050040CE3F /* AutoRowHightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoRowHightCell.xib; sourceTree = "<group>"; };
+		702A5136204EA4EF0040CE3F /* TitleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleScrollView.h; sourceTree = "<group>"; };
+		702A5137204EA4EF0040CE3F /* TitleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleScrollView.m; sourceTree = "<group>"; };
 		709AB4E51E9A184600A26E20 /* CopySource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopySource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709AB4E91E9A184600A26E20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		709AB4EB1E9A184600A26E20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -197,6 +208,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702A5135204EA4D10040CE3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				702A5136204EA4EF0040CE3F /* TitleScrollView.h */,
+				702A5137204EA4EF0040CE3F /* TitleScrollView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		709AB4DC1E9A184600A26E20 = {
 			isa = PBXGroup;
 			children = (
@@ -318,8 +338,14 @@
 		709AB5121E9A54C100A26E20 /* RecommandViewController */ = {
 			isa = PBXGroup;
 			children = (
+				702A5135204EA4D10040CE3F /* View */,
 				709AB5131E9A54ED00A26E20 /* RecommandViewController.h */,
 				709AB5141E9A54ED00A26E20 /* RecommandViewController.m */,
+				702A512D204E90450040CE3F /* SVandTVViewController.h */,
+				702A512E204E90450040CE3F /* SVandTVViewController.m */,
+				702A5130204E97050040CE3F /* AutoRowHightCell.h */,
+				702A5131204E97050040CE3F /* AutoRowHightCell.m */,
+				702A5132204E97050040CE3F /* AutoRowHightCell.xib */,
 			);
 			path = RecommandViewController;
 			sourceTree = "<group>";
@@ -553,7 +579,7 @@
 				TargetAttributes = {
 					709AB4E41E9A184600A26E20 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WR5828Y35T;
+						DevelopmentTeam = 7D992WX2BB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -595,6 +621,7 @@
 				709AB5851E9A598400A26E20 /* guidePage1-667h@2x.png in Resources */,
 				709AB5811E9A598400A26E20 /* guidePage3-568h@2x.png in Resources */,
 				709AB57C1E9A598400A26E20 /* guidePage1@3x.png in Resources */,
+				702A5134204E97050040CE3F /* AutoRowHightCell.xib in Resources */,
 				709AB57E1E9A598400A26E20 /* guidePage3@3x.png in Resources */,
 				709AB5871E9A598400A26E20 /* guidePage3-667h@2x.png in Resources */,
 				709AB4F51E9A184600A26E20 /* Assets.xcassets in Resources */,
@@ -612,7 +639,9 @@
 			files = (
 				709AB5651E9A575D00A26E20 /* UIView+Extension.m in Sources */,
 				70E2E7571EE3048200B66710 /* SDCycleScrollView.m in Sources */,
+				702A512F204E90450040CE3F /* SVandTVViewController.m in Sources */,
 				70E2E7541EE3048100B66710 /* TADotView.m in Sources */,
+				702A5138204EA4EF0040CE3F /* TitleScrollView.m in Sources */,
 				709AB54A1E9A561300A26E20 /* MBProgressHUD+Show.m in Sources */,
 				709AB5081E9A53C400A26E20 /* RootTabbarController.m in Sources */,
 				709AB5591E9A561300A26E20 /* UIImage+WebP.m in Sources */,
@@ -623,6 +652,7 @@
 				709AB5531E9A561300A26E20 /* SDWebImageDownloaderOperation.m in Sources */,
 				709AB5621E9A575400A26E20 /* UIBarButtonItem+addition.m in Sources */,
 				709AB51E1E9A557E00A26E20 /* BaseNavigationController.m in Sources */,
+				702A5133204E97050040CE3F /* AutoRowHightCell.m in Sources */,
 				70E2E7521EE3048100B66710 /* TAAbstractDotView.m in Sources */,
 				709AB54F1E9A561300A26E20 /* SDImageCache.m in Sources */,
 				709AB54E1E9A561300A26E20 /* NSData+ImageContentType.m in Sources */,
@@ -772,7 +802,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WR5828Y35T;
+				DEVELOPMENT_TEAM = 7D992WX2BB;
 				GCC_PREFIX_HEADER = CopySource/CopySource.pch;
 				INFOPLIST_FILE = CopySource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -787,7 +817,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WR5828Y35T;
+				DEVELOPMENT_TEAM = 7D992WX2BB;
 				GCC_PREFIX_HEADER = CopySource/CopySource.pch;
 				INFOPLIST_FILE = CopySource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

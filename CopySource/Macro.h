@@ -57,6 +57,7 @@
 #define IS_IPHONE6P (IS_IPHONE && kSCREEN_MAX_LENGTH == 736.0)
 #define iPhoneX (kScreenWidth == 375.0f) && (kScreenHeight == 812.0f) && IS_IPHONE
 
+#define kBottomSafeHeight ((iPhoneX)?(34):(0))
 
 
 #define kSafeString(__X__)        [__X__ isKindOfClass:[NSNull class]] ? @"" : [NSString stringWithFormat:@"%@", (__X__)]
