@@ -11,5 +11,5 @@
 @interface AutoRowHightCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
-
+@property(nonatomic,strong)NSDictionary *infoDic;
 @end

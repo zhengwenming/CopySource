@@ -9,7 +9,11 @@
 #import "AutoRowHightCell.h"
 
 @implementation AutoRowHightCell
-
+-(void)setInfoDic:(NSDictionary *)infoDic{
+    _infoDic = infoDic;
+    self.titleLabel.text = infoDic[@"title"];
+    self.descLabel.text = infoDic[@"desc"];
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

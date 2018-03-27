@@ -32,6 +32,7 @@
     }
     return _dataSource;
 }
+//头部滚动视图的代理方法
 -(void)onSelected:(TitleScrollView *)titleSV index:(NSInteger)index{
     [self.myTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
@@ -78,22 +79,15 @@
     self.myTableView.tableFooterView = [UIView new];
     self.myTableView.tableHeaderView = [UIView new];
     self.myTableView.rowHeight = 45.f;
-    if (iPhoneX) {
-        self.myTableView.contentInset = UIEdgeInsetsMake(0, 0, kScreenHeight-self.titleSV.frame.size.height-kNavbarHeight-kBottomSafeHeight-kNavbarHeight, 0);
-    }else{
-        self.myTableView.contentInset = UIEdgeInsetsMake(0, 0, kScreenHeight-self.titleSV.frame.size.height-kNavbarHeight-kNavbarHeight, 0);
-    }
+    self.myTableView.contentInset = UIEdgeInsetsMake(0, 0, kScreenHeight-self.titleSV.frame.size.height-kNavbarHeight-kBottomSafeHeight-kNavbarHeight, 0);
     [self.view addSubview:self.myTableView ];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSource.count;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AutoRowHightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AutoRowHightCell"];
-    NSDictionary *eachDic = self.dataSource[indexPath.row];
-    cell.titleLabel.text = eachDic[@"title"];
-    cell.descLabel.text = eachDic[@"desc"];
+    cell.infoDic = self.dataSource[indexPath.row];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
