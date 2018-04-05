@@ -40,8 +40,6 @@
 
 #define kTabBarHeight (iPhoneX?(49.f+34.f):(49.f))
 
-#define kBottomSafeHeight ((IS_IPHONEX)?(34):(0))
-
 #define TheUserDefaults [NSUserDefaults standardUserDefaults]
 
 
